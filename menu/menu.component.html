@@ -1,0 +1,19 @@
+<div>
+  <div>
+    <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+    <mat-menu #menu="matMenu">
+      <a routerLink="/yoyaku">Yoayku</a>
+      <br>
+      <a routerLink="/pc">pc</a>
+    </mat-menu>
+  </div>
+  <div>{{title()}}</div>
+  
+  @if (isShow)
+  {
+    <div><ng-content></ng-content></div>
+  }
+  @else {
+    <div>There is nothing to show</div>
+  }
+</div>

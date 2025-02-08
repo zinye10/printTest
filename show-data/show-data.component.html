@@ -1,0 +1,32 @@
+<p>get-data works!</p>
+
+<div>
+    <input type="text" placeholder="Username" [(ngModel)]="username" name="username"/>
+    <input type="text" placeholder="Passowrd" [(ngModel)]="password" name="password"/>
+    <input type="number" placeholder="Age" [(ngModel)]="age" name="age"/>
+    <input type="text" placeholder="Description" [(ngModel)]="description" name="descrip"/>
+    <button type="button" (click)="CreateUser()"> Create </button>
+</div>
+
+@if (userCreateFlg) {
+    <div>
+        <p>Create User Work! </p>
+        <p>{{getNewUser}} </p>
+    </div>
+}
+
+<p>List User!</p>
+<div>
+    <ul>
+        <li *ngFor="let post  of getdata">
+            <div>
+                <span>{{post.username}}</span>
+            </div>
+        </li>
+    </ul>
+</div>
+
+<p>Search User</p>
+<div>
+    
+</div>
