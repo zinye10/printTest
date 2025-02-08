@@ -1,0 +1,20 @@
+.body-data {
+    background-color: aqua;
+    border-width: 2cm;
+    border-color: black;
+    height:10rem;
+    width: 80%;
+}
+
+@media print {
+    body {
+      margin: 0;
+      padding: 0;
+      font-size: 12pt;
+    }
+    #htmlData {
+      width: 100%;
+      margin: 0;
+    }
+  }
+  
