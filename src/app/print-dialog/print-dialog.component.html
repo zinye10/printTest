@@ -1,0 +1,32 @@
+<h1 mat-dialog-title>Print Dialog</h1>
+<div mat-dialog-content>
+  <p>Here is the content to print.</p>
+</div>
+<section class="example-section" [formGroup]="toppings">
+    <h4>Select your PC</h4>
+    <p><mat-checkbox formControlName="pc1">Pc1</mat-checkbox></p>
+    <p><mat-checkbox formControlName="pc2">Pc2</mat-checkbox></p>
+    <p><mat-checkbox formControlName="pc3">Pc3</mat-checkbox></p>
+    <mat-form-field>
+        <mat-label>Busyo</mat-label>
+        <input matInput title="hello" formControlName="busyo">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>User</mat-label>
+        <mat-select formControlName="user">
+          <mat-option value="one">User1</mat-option>
+          <mat-option value="two">User2</mat-option>
+        </mat-select>
+      </mat-form-field>
+</section>
+  
+  <section class="example-section" [formGroup]="toppings">
+    <h4>You chose:</h4>
+    {{toppings.value | json}}
+</section>
+<div mat-dialog-actions>
+  <button mat-button (click)="print()">Print</button>
+  <button mat-button mat-dialog-close>Close</button>
+</div>
+<router-outlet></router-outlet>
+

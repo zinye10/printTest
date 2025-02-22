@@ -1,0 +1,69 @@
+#htmlData {
+    display: grid;
+    column-gap: 10px;
+    row-gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 160px));
+    margin-top: 50px;
+    justify-content: space-around;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.rootHeader{
+    text-align: center;
+    font-weight: bold;
+}
+
+.header{
+    text-align: center;
+    font-size:0.5rem;
+}
+
+.box{
+    border: 2px solid black;
+}
+
+.kouin {
+    display: grid;
+    grid-template-columns: 8rem 2rem;
+}
+
+img {
+    padding-top: 50%;
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.pc, .kojin {
+    display: grid;
+    grid-template-columns: 3rem auto;
+}
+.pc-item, .kojin-item {
+    padding: -4px; /* Optional: Adds some padding to the cells */
+    text-overflow: clip;
+}
+
+.body-data {
+    font-size:0.5rem;
+    padding-left: 2%;
+}
+
+/*
+.body-data {
+    background-color: rgb(246, 247, 247);
+    border-width: 2cm;
+    border-color: black;
+    height:10rem;
+}
+
+@media print {
+    body {
+      margin: 0;
+      padding: 0;
+      font-size: 12pt;
+    }
+    #htmlData {
+      width: 100%;
+      margin: 0;
+    }
+  }*/
+  

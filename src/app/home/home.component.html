@@ -1,0 +1,55 @@
+ <!-- Your HTML content to convert to PDF -->
+ <div id="htmlData">
+    <div id="sheet">
+      <div class="rootHeader">PC持ち出し許可証</div>
+      <div class="box">
+        <div class="header">
+            PC持ち出し許可証<br/>＜一般持ち出し用＞
+        </div>
+        <div class="body-data">
+            <div class="kouin">
+                <div class="kojin">
+                    <div class="kojin-item">管理部署</div>
+                    <div class="kojin-item">:   住民情報</div>
+                    <div class="kojin-item">管理者</div>
+                    <div class="kojin-item">:   坂本</div>
+                    <div class="kojin-item">使用者</div>
+                    <div class="kojin-item">:   ジンイェ</div>
+                </div>
+                <img
+            class="listing-photo"
+            [src]="imagePath"
+            alt="印"
+          />
+            </div>
+            
+            <div class="midashi1">
+                <pre>このPCは持ち出し用として
+登録されています。</pre>
+            </div>
+            <div class="pc">
+                <div class="pc-item">管理ID:</div>
+                <div class="pc-item">:  38236</div>
+                <div class="pc-item">目的:</div>
+                <div class="pc-item">:  在宅勤務、外出時使用</div>
+                <div class="pc-item">機器:</div>
+                <div class="pc-item">:  Thin Client</div>
+            </div>
+            <div class="midashi2">
+                <pre>２０２５年２月３ン私費
+（株）ジーシーシー
+０２７－２６３－１６３７</pre>
+            </div>
+        </div>
+      </div>
+    </div> 
+  </div>
+<div class="no-print">
+    <button (click)="generatePDF()">Generate PDF</button>
+    <button (click)="printPDF()">Print PDF</button>
+    <button (click)="printPDF()">Print PDF</button>
+    <button (click)="preview()">Preview</button>
+    <button (click)="printDialog()">Print Dialog</button>
+    
+<div>
+    

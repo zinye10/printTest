@@ -1,19 +1,24 @@
+
 import { Router, RouterOutlet } from '@angular/router';
 import { jsPDF } from 'jspdf'
 import { Component, ViewChild, ElementRef } from '@angular/core';
-import { MatDialogRef } from '@angular/material/dialog'
+import { MatDialogRef } from '@angular/material/dialog';
+import * as XLSX from 'xlsx';
+import { saveAs } from 'file-saver';
 
 import html2canvas from 'html2canvas';
 
 @Component({
-  selector: 'app-root',
+  selector: 'app-home',
   standalone: true,
-  imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  imports: [],
+  templateUrl: './home.component.html',
+  styleUrl: './home.component.css'
 })
-export class AppComponent {
+export class HomeComponent {
   title = 'pdf-generator';
+  
+  imagePath = "/favicon.ico";
 
   constructor(private router: Router){
     
@@ -32,7 +37,9 @@ export class AppComponent {
       let position = 0;
 
       pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
-      pdf.save('html-to-pdf.pdf');
+      pdf.save('持ち出し許可証.pdf');
+      //window.open(pdf.output('bloburl'), '_blank');
+      window.print();
     });
   }
 
@@ -98,6 +105,25 @@ export class AppComponent {
 
   printDialog() {
     this.router.navigate(['/print']);
+  }
+
+  exportToExcel() {
+    // Sample data to be exported
+    const data = [
+      { Name: 'John Doe', Age: 28, Address: '123 Main St' },
+      { Name: 'Jane Doe', Age: 24, Address: '456 Elm St' }
+    ];
+
+    // Convert JSON data to worksheet
+    const ws: XLSX.WorkSheet = XLSX.utils.json_to_sheet(data);
+
+    // Create a new workbook and add the worksheet
+    const wb: XLSX.WorkBook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
+
+    // Generate Excel file and trigger download
+    const wbout = XLSX.write(wb, { bookType: 'xlsx', type: 'array' });
+    saveAs(new Blob([wbout], { type: 'application/octet-stream' }), 'data.xlsx');
   }
   
 }
